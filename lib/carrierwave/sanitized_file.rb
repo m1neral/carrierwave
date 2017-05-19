@@ -160,7 +160,7 @@ module CarrierWave
       if @content
         @content
       elsif is_path?
-        File.open(@file, "rb") {|file| file.read}
+        File.read(@file)
       else
         @file.try(:rewind)
         @content = @file.read
